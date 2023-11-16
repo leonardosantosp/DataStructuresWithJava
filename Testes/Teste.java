@@ -1,11 +1,13 @@
 public class Teste {
   public static void main(String[] args) {
-    Vetor vetor = new Vetor(2);
-    vetor.adciona("elemento 1");
-    vetor.adciona("elemento 2");
-    vetor.adciona("elemento 3");
+    Vetor vetor = new Vetor(10);
+    vetor.insert("element 1");
+    vetor.insert("element 2");
+    vetor.insert("element 3");
 
-    vetor.escreve();
+    System.out.println(vetor.toString());
+
+    System.out.println(vetor.vectorSize());
   }
 
 }
