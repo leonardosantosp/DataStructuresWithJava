@@ -1,24 +1,44 @@
-public class Vetor {
-  private String[] elementos;
-  private int proxInserir;
+import java.util.Arrays;
 
-  public Vetor(int capacidade) {
-    this.elementos = new String[capacidade];
-    this.proxInserir = 0;
+public class Vetor {
+  private String[] elements;
+  private int nextInsert;
+
+  public Vetor(int capacity) {
+    this.elements = new String[capacity];
+    this.nextInsert = 0;
   }
 
-  public Boolean adciona(String elemento) {
-    if (this.proxInserir < this.elementos.length) {
-      this.elementos[this.proxInserir] = elemento;
-      this.proxInserir++;
+  public Boolean insert(String elements) {
+    if (this.nextInsert < this.elements.length) {
+      this.elements[this.nextInsert] = elements;
+      this.nextInsert++;
       return true;
     }
     return false;
   }
 
-  public void escreve() {
-    for (int i = 0; i < this.proxInserir; i++) {
-      System.out.println(this.elementos[i]);
+  @Override
+  public String toString() {
+    StringBuilder s = new StringBuilder();
+
+    s.append("[");
+
+    for (int i = 0; i < this.nextInsert - 1; i++) {
+      s.append(this.elements[i]);
+      s.append(" ,");
     }
+
+    if (this.nextInsert > 0) {
+      s.append(this.elements[this.nextInsert - 1]);
+    }
+
+    s.append(" ]");
+    return s.toString();
   }
+
+  public int vectorSize() {
+    return this.elements.length;
+  }
+
 }
