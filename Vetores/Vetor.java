@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 public class Vetor {
   private String[] elements;
@@ -39,6 +38,13 @@ public class Vetor {
 
   public int vectorSize() {
     return this.elements.length;
+  }
+
+  public String search(int position) {
+    if (position >= this.nextInsert || position < 0) {
+      throw new IllegalArgumentException("Position is invalid!");
+    }
+    return this.elements[position];
   }
 
 }
