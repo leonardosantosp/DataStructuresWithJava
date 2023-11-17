@@ -47,4 +47,13 @@ public class Vetor {
     return this.elements[position];
   }
 
+  public int checkElementExists(String element) {
+    for (int i = 0; i < this.nextInsert; i++) {
+      if (this.elements[i].equals(element)) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
 }
