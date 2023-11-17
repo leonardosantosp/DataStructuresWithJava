@@ -10,6 +10,7 @@ public class Teste {
     System.out.println(vetor.vectorSize());
 
     System.out.println(vetor.search(2));
+    System.out.println(vetor.checkElementExists("element 3"));
 
   }
 
