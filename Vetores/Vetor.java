@@ -9,6 +9,7 @@ public class Vetor {
   }
 
   public Boolean insert(String elements) {
+    this.increasesCapacity();
     if (this.size < this.elements.length) {
       this.elements[this.size] = elements;
       this.size++;
@@ -57,11 +58,14 @@ public class Vetor {
   }
 
   public boolean insertAnywhere(int pos, String element) {
+
     if (!(pos >= 0 && pos < size)) {
       throw new IllegalArgumentException("Posição Inválida!");
     }
 
-    for (int i = size; i >= pos; i--) {
+    this.increasesCapacity();
+
+    for (int i = this.size - 1; i >= pos; i--) {
       this.elements[i + 1] = this.elements[i];
     }
     this.elements[pos] = element;
@@ -69,4 +73,15 @@ public class Vetor {
 
     return true;
   }
+
+  private void increasesCapacity() {
+    if (this.elements.length == this.size) {
+      String[] newElements = new String[this.elements.length * 2];
+      for (int i = 0; i < this.elements.length; i++) {
+        newElements[i] = this.elements[i];
+      }
+      this.elements = newElements;
+    }
+  }
+
 }
