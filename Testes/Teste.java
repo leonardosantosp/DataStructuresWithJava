@@ -14,11 +14,11 @@ public class Teste {
     vetor.insertAnywhere(1, "element 4");
     System.out.println(vetor.toString());
     vetor.insert("element4");
-
     System.out.println(vetor.insert("element 5"));
     System.out.println(vetor.vectorSize());
     System.out.println(vetor.toString());
-
+    vetor.removeItem(2);
+    System.out.println(vetor.toString());
   }
 
 }

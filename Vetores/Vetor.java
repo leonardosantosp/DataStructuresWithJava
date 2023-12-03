@@ -60,7 +60,7 @@ public class Vetor {
   public boolean insertAnywhere(int pos, String element) {
 
     if (!(pos >= 0 && pos < size)) {
-      throw new IllegalArgumentException("Posição Inválida!");
+      throw new IllegalArgumentException("Position is Invalid!");
     }
 
     this.increasesCapacity();
@@ -82,6 +82,16 @@ public class Vetor {
       }
       this.elements = newElements;
     }
+  }
+
+  public void removeItem(int pos) {
+    if (!(pos >= 0 && pos < this.size)) {
+      throw new IllegalArgumentException("Position is invalid!");
+    }
+    for (; pos < this.elements.length - 1; pos++) {
+      this.elements[pos] = this.elements[pos + 1];
+    }
+    this.elements[pos] = null;
   }
 
 }
