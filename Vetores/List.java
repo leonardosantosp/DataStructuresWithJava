@@ -1,14 +1,20 @@
+import java.lang.reflect.Array;
 
-public class Vetor {
-  private String[] elements;
+public class List<T> {
+  private T[] elements;
   private int size;
 
-  public Vetor(int capacity) {
-    this.elements = new String[capacity];
+  public List(int capacity) {
+    this.elements = (T[]) new Object[capacity];
     this.size = 0;
   }
 
-  public Boolean insert(String elements) {
+  public List(int capacity, Class<T> typeClass) {
+    this.elements = (T[]) Array.newInstance(typeClass, capacity);
+    this.size = 0;
+  }
+
+  public Boolean insert(T elements) {
     this.increasesCapacity();
     if (this.size < this.elements.length) {
       this.elements[this.size] = elements;
@@ -41,14 +47,14 @@ public class Vetor {
     return this.elements.length;
   }
 
-  public String search(int position) {
+  public T search(int position) {
     if (position >= this.size || position < 0) {
       throw new IllegalArgumentException("Position is invalid!");
     }
     return this.elements[position];
   }
 
-  public int checkElementExists(String element) {
+  public int checkElementExists(T element) {
     for (int i = 0; i < this.size; i++) {
       if (this.elements[i].equals(element)) {
         return i;
@@ -57,7 +63,7 @@ public class Vetor {
     return -1;
   }
 
-  public boolean insertAnywhere(int pos, String element) {
+  public boolean insertAnywhere(int pos, T element) {
 
     if (!(pos >= 0 && pos < size)) {
       throw new IllegalArgumentException("Position is Invalid!");
@@ -76,7 +82,7 @@ public class Vetor {
 
   private void increasesCapacity() {
     if (this.elements.length == this.size) {
-      String[] newElements = new String[this.elements.length * 2];
+      T[] newElements = (T[]) new Object[this.elements.length * 2];
       for (int i = 0; i < this.elements.length; i++) {
         newElements[i] = this.elements[i];
       }
@@ -93,5 +99,4 @@ public class Vetor {
     }
     this.elements[pos] = null;
   }
-
 }
