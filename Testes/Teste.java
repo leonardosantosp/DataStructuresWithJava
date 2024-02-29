@@ -19,6 +19,12 @@ public class Teste {
     System.out.println(vetor.toString());
     vetor.removeItem(2);
     System.out.println(vetor.toString());
+
+    VetorObject vetorObject = new VetorObject(3);
+    vetorObject.insert(3);
+    vetorObject.insert("s");
+    vetorObject.insert(4.1);
+    System.out.println(vetorObject);
   }
 
 }
