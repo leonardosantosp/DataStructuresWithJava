@@ -1,14 +1,14 @@
 
 public class Vetor {
-  private String[] elements;
+  private Object[] elements;
   private int size;
 
   public Vetor(int capacity) {
-    this.elements = new String[capacity];
+    this.elements = new Object[capacity];
     this.size = 0;
   }
 
-  public Boolean insert(String elements) {
+  public Boolean insert(Object elements) {
     this.increasesCapacity();
     if (this.size < this.elements.length) {
       this.elements[this.size] = elements;
@@ -41,14 +41,14 @@ public class Vetor {
     return this.elements.length;
   }
 
-  public String search(int position) {
+  public Object search(int position) {
     if (position >= this.size || position < 0) {
       throw new IllegalArgumentException("Position is invalid!");
     }
     return this.elements[position];
   }
 
-  public int checkElementExists(String element) {
+  public int checkElementExists(Object element) {
     for (int i = 0; i < this.size; i++) {
       if (this.elements[i].equals(element)) {
         return i;
@@ -57,7 +57,7 @@ public class Vetor {
     return -1;
   }
 
-  public boolean insertAnywhere(int pos, String element) {
+  public boolean insertAnywhere(int pos, Object element) {
 
     if (!(pos >= 0 && pos < size)) {
       throw new IllegalArgumentException("Position is Invalid!");
@@ -76,7 +76,7 @@ public class Vetor {
 
   private void increasesCapacity() {
     if (this.elements.length == this.size) {
-      String[] newElements = new String[this.elements.length * 2];
+      Object[] newElements = new Object[this.elements.length * 2];
       for (int i = 0; i < this.elements.length; i++) {
         newElements[i] = this.elements[i];
       }

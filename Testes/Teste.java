@@ -1,6 +1,8 @@
+
 public class Teste {
   public static void main(String[] args) {
     Vetor vetor = new Vetor(4);
+    Vetor teste = new Vetor(5);
     vetor.insert("element 1");
     vetor.insert("element 2");
     vetor.insert("element 3");
@@ -25,6 +27,14 @@ public class Teste {
     vetorObject.insert("s");
     vetorObject.insert(4.1);
     System.out.println(vetorObject);
+
+    Contact c1 = new Contact("Leonardo", "35-12345", "leonardo@gmail.com");
+    Contact c2 = new Contact("Gu", "35-54321", "gu123@gmail.com");
+
+    teste.insert(c1);
+    teste.insert(c2);
+
+    System.out.println(teste);
   }
 
 }
