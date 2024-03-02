@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Teste {
   public static void main(String[] args) {
@@ -39,6 +40,23 @@ public class Teste {
     List<String> listVector = new List<String>(1);
     listVector.insert("element");
 
+    ArrayList<String> arrayList = new ArrayList<String>();
+    arrayList.add("A");
+    arrayList.add("C");
+
+    System.out.println(arrayList);
+    arrayList.add(1, "B");
+    System.out.println(arrayList);
+    boolean exist = arrayList.contains("A");
+    System.out.println(exist);
+    int pos = arrayList.indexOf("A");
+    System.out.println("o item está no índice: " + pos);
+    System.out.println(arrayList.get(2));
+
+    arrayList.remove(0);
+    arrayList.remove("B");
+    System.out.println(arrayList);
+    System.out.println(arrayList.size());
   }
 
 }
