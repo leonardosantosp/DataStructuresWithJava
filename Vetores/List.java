@@ -99,4 +99,9 @@ public class List<T> {
     }
     this.elements[pos] = null;
   }
+
+  public boolean contain(T element) {
+    return checkElementExists(element) > -1;
+  }
+
 }

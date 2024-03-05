@@ -57,6 +57,17 @@ public class Teste {
     arrayList.remove("B");
     System.out.println(arrayList);
     System.out.println(arrayList.size());
+
+    List<String> list = new List<String>(5);
+
+    list.insert("A");
+    list.insert("B");
+    list.insert("C");
+
+    System.out.println(list.contain("A"));
+    System.out.println(list.contain("B"));
+    System.out.println(list.contain("E"));
+
   }
 
 }
