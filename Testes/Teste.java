@@ -68,6 +68,14 @@ public class Teste {
     System.out.println(list.contain("B"));
     System.out.println(list.contain("E"));
 
+    List<String> list2 = new List<String>(5);
+    list2.insert("A");
+    list2.insert("B");
+    list2.insert("C");
+    list2.insert("D");
+    list2.insert("A");
+
+    System.out.println(list2.lastIndexOf("A"));
   }
 
 }
