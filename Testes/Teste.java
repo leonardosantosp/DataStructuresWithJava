@@ -73,9 +73,11 @@ public class Teste {
     list2.insert("B");
     list2.insert("C");
     list2.insert("D");
-    list2.insert("A");
+    list2.insert("E");
 
     System.out.println(list2.lastIndexOf("A"));
+    list2.remove("D");
+    System.out.println(list2.toString());
   }
 
 }

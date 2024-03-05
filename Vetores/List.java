@@ -100,6 +100,13 @@ public class List<T> {
     this.elements[pos] = null;
   }
 
+  public void remove(T element) {
+    int index = checkElementExists(element);
+    if (index > -1) {
+      this.removeItem(index);
+    }
+  }
+
   public boolean contain(T element) {
     return checkElementExists(element) > -1;
   }
